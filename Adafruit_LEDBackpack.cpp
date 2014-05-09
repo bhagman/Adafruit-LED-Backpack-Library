@@ -82,8 +82,8 @@ void Adafruit_LEDBackpack::writeDisplay(void) {
   Wire.write((uint8_t)0x00); // start at address $00
 
   for (uint8_t i=0; i<8; i++) {
-    Wire.write(displaybuffer[i] & 0xFF);    
-    Wire.write(displaybuffer[i] >> 8);    
+    Wire.write((uint8_t)(displaybuffer[i] & 0xFF));    
+    Wire.write((uint8_t)(displaybuffer[i] >> 8));    
   }
   Wire.endTransmission();  
 }
